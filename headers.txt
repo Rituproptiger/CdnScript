@@ -1,0 +1,22 @@
+-
+*/*
+application/xml,application/vnd.wap.xhtml+xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,text/vnd.wap.wml;q=0.6,*/*;q=0.5
+application/xml,application/vnd.wap.xhtml+xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,text/vnd.wap.wml;q=0.6,*/*;q=0.5,image/webp
+image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, */*
+image/jpeg, image/gif, image/x-xbitmap, image/png;q=0.8, image/webp;q=0.8, */*;q=0.5
+image/png
+image/png,image/*;q=0.8,*/*;q=0.5
+image/png, image/svg+xml, image/jxr, image/*;q=0.8, */*;q=0.5
+image/png, image/svg+xml, image/*;q=0.8, */*;q=0.5
+image/png,image/webp,*/*;q=0.8
+image/*;q=0.8
+image/vnd.wap.wbmp, image/png, image/jpeg, image/gif, image/bmp, */*
+*/*,image/webp
+image/webp,image/*,*/*;q=0.8
+image/webp,image/*,*/*;q=0.8,image/webp
+image/webp,*/*;q=0.8
+text/html, */*
+text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/webp, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1
+text/vnd.wap.wml,text/xml,application/xml,application/vnd.wap.xhtml+xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+text/xml, text/html, application/xhtml+xml, image/png, text/plain, */*;q=0.8

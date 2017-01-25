@@ -1,0 +1,61 @@
+import sys
+import glob
+import re
+import gzip
+import subprocess
+from multiprocessing import Pool
+import threading
+from concurrent.futures import ThreadPoolExecutor
+import os
+
+
+
+
+
+
+
+def pushToCdn(urls):
+    print "Thread name is: "+threading.current_thread().name
+
+    for url in urls:
+     for header in headers:
+         print "=================================Start of process================================================"
+
+         currentUrl=cdnUrl+url
+         print "Url is: " +"curl "+ currentUrl+" -H Accept: "+header.strip('\n')+"-o /dev/null "
+         subprocess.call(['curl','-v','-H',"Accept: "+header.strip('\n'),'-o',"/dev/null",currentUrl])
+
+         print "=================================End of process================================================"
+
+
+
+
+cdnUrl="http://content.makaan-ws.com"
+headersFileurls =open("headers.txt", "r")
+headers = set()
+for l in headersFileurls.readlines():
+    print l
+    headers.add(l)
+
+
+
+regex = r"(\/)(\d+)(\/)(\d+)(\/)(\d+)(\/)(\d+|[a-z]|[A-Z]|(-))*(.)(jpeg|png)"
+regexParam=r"(height=\d+&width=\d+)|(width=\d+&height=\d+)|(width=\d+)|(height=\d+)"
+pool = ThreadPoolExecutor(1)
+
+for infile in glob.glob("/home/ritu/Desktop/CDMlogs/*.gz"):
+    urls = set()
+    with gzip.open(infile, 'rb') as f:
+
+        for line in f:
+
+            if re.search(regex, line) and re.search(regexParam,line):
+
+                                                                    urlWithParam=re.search(regex, line).group()+"?"+re.search(regexParam,line).group()
+                                                                    urls.add(urlWithParam)
+
+
+        future = pool.submit(pushToCdn, urls)
+
+
+
